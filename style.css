@@ -1,60 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+:root {
+  --primary-bg: #181c24;
+  --secondary-bg: #23283a;
+  --accent: #3498db;
+  --accent-hover: #217dbb;
+  --text: #f4f4f4;
+  --muted: #b0b8c1;
+  --card-bg: #23283a;
+  --shadow: 0 4px 24px rgba(0,0,0,0.2);
+}
+
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    color: #333;
-    background-color: #f9f9f9;
+  font-family: 'Inter', Arial, sans-serif;
+  background: var(--primary-bg);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+  line-height: 1.7;
+}
+
+header {
+  background: linear-gradient(90deg, #23283a 60%, var(--accent) 100%);
+  color: #fff;
+  padding: 2.5rem 2rem 1.5rem 2rem;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow);
+}
+
+header h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+}
+
+nav {
+  margin-top: 1rem;
+}
+
+header nav a {
+  color: #fff;
+  margin: 0 18px;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 0;
+  border-bottom: 2px solid transparent;
+  transition: border 0.2s, color 0.2s;
+}
+
+header nav a:hover, header nav a:focus {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+}
+
+a.btn {
+  display: inline-block;
+  padding: 10px 24px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 6px;
+  margin-left: 24px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(52,152,219,0.15);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+a.btn:hover {
+  background: var(--accent-hover);
+  box-shadow: 0 4px 16px rgba(52,152,219,0.25);
+}
+
+section {
+  max-width: 900px;
+  margin: 2.5rem auto;
+  padding: 2.5rem 2rem;
+  background: var(--secondary-bg);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+
+section h2 {
+  color: var(--accent);
+  margin-bottom: 1.2rem;
+  font-size: 2rem;
+  letter-spacing: 0.5px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  margin-bottom: 1.1rem;
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+
+#projects ul, #blogs ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 0;
+}
+
+#projects li, #blogs li {
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 1.2rem 1.5rem;
+  flex: 1 1 260px;
+  min-width: 220px;
+  color: var(--text);
+  transition: transform 0.18s, box-shadow 0.18s;
+}
+
+#projects li:hover, #blogs li:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(52,152,219,0.18);
+}
+
+#about p {
+  color: var(--muted);
+  font-size: 1.15rem;
+}
+
+#contact p, #contact a {
+  color: var(--muted);
+  font-size: 1.08rem;
+  margin-bottom: 0.5rem;
+}
+
+#contact a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+#contact a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem 0 1rem 0;
+  background: var(--secondary-bg);
+  color: var(--muted);
+  font-size: 1rem;
+  border-radius: 0 0 18px 18px;
+  margin: 2rem auto 0 auto;
+  max-width: 900px;
+  box-shadow: var(--shadow);
+}
+
+/* Responsive Design */
+@media (max-width: 700px) {
+  header h1 {
+    font-size: 1.5rem;
   }
-  
-  header {
-    background: #000;
-    color: #fff;
-    padding: 1rem 2rem;
-    text-align: center;
-  }
-  
-  header nav a {
-    color: #fff;
-    margin: 0 15px;
-    text-decoration: none;
-  }
-  
   section {
-    padding: 2rem;
+    padding: 1.2rem 0.7rem;
+    margin: 1.2rem 0.3rem;
   }
-  
-  section h2 {
-    color: #2c3e50;
+  #projects ul, #blogs ul {
+    flex-direction: column;
+    gap: 1rem;
   }
-  
-  ul {
-    list-style: none;
-    padding-left: 0;
+  nav a, a.btn {
+    margin: 0 8px 0 0;
+    font-size: 0.98rem;
+    padding: 7px 0;
   }
-  
-  ul li {
-    margin-bottom: 0.8rem;
-  }
-  
-  a.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #3498db;
-    color: white;
-    border-radius: 5px;
-    margin-left: 20px;
-    text-decoration: none;
-  }
-  
-  a.btn:hover {
-    background: #2980b9;
-  }
-  
-  footer {
-    text-align: center;
-    padding: 1rem;
-    background: #ddd;
-    color: #333;
-  }
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
   
